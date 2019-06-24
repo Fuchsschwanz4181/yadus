@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <title>URL Shortener</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/shorterurls.css' %}">
+        <div class="page-header">
+            <h1>URL Shortener</h1>
+        </div>
+    </head>
+    <body>
+    <div class="form-block">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.yoururl }}
+            </div>
+            <button type="submit" class="btn btn=primary">Shorten!</button>
+        </form>
+        <div class="output-link">Your short URL: <a href="{{ shorturl }}">{{ shorturl }}</a></div>
+    </div>
+
+    <div class="footer"></div>
+    </body>
+</html>
